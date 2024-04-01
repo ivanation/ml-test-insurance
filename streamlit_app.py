@@ -9,6 +9,9 @@ labelencoder = preprocessing.LabelEncoder()
 scaler = preprocessing.StandardScaler()
 data = pd.read_csv("insurance.csv")
 data.drop_duplicates(inplace=True)
+data = data[["age","sex","bmi","children","smoker","charges"]]
+data['sex'] = labelencoder.fit_transform(data['sex'])
+data['smoker'] = labelencoder.fit_transform(data['smoker'])
 
 """
 # Welcome to Streamlit!
