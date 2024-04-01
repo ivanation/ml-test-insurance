@@ -35,9 +35,14 @@ bmi = st.sidebar.slider("BMI",10.0,40.0,step=0.1,value=20.0)
 children = st.sidebar.slider("Number of children",0,10,step=1,value=0)
 smoker = st.sidebar.selectbox("Smoker",[0,1], format_func = lambda x: "No" if x==0 else "Yes")
 
-"""
-# Welcome to Streamlit!
+input_data = preprocess_input(age, sex, bmi, children, smoker)
+prediction = predict_insurance_charge(input_data)
 
+st.subheader("Estimated Insurance Charge:")
+result_placeholder = st.empty()
+result_placeholder.write(prediction[0])
+
+"""
 Edit `/streamlit_app.py` to customize this app to your heart's desire :heart:.
 If you have any questions, checkout our [documentation](https://docs.streamlit.io) and [community
 forums](https://discuss.streamlit.io).
