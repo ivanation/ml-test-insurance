@@ -24,7 +24,7 @@ def preprocess_input(age, sex, bmi, children, smoker):
   return data
 
 def predict_insurance_charge(data):
-  prediction = model.predict(data)
+  prediction = rfr_model.predict(data)
   return prediction
 
 st.title("Insurance Charge Estimation")
@@ -36,8 +36,11 @@ children = st.sidebar.slider("Number of children",0,10,step=1,value=0)
 smoker = st.sidebar.selectbox("Smoker",[0,1], format_func = lambda x: "No" if x==0 else "Yes")
 
 input_data = preprocess_input(age, sex, bmi, children, smoker)
+prediction = predict_insurance_charge(input_data)
 
 st.subheader("Estimated Insurance Charge:")
+result_placeholder = st.empty()
+result_placeholder.write(prediction[0])
 
 """
 Edit `/streamlit_app.py` to customize this app to your heart's desire :heart:.
