@@ -35,6 +35,8 @@ bmi = st.sidebar.slider("BMI",10.0,40.0,step=0.1,value=20.0)
 children = st.sidebar.slider("Number of children",0,10,step=1,value=0)
 smoker = st.sidebar.selectbox("Smoker",[0,1], format_func = lambda x: "No" if x==0 else "Yes")
 
+input_data = preprocess_input(age, sex, bmi, children, smoker)
+
 st.subheader("Estimated Insurance Charge:")
 
 """
