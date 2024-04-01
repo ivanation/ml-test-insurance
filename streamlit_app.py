@@ -37,8 +37,8 @@ smoker = st.sidebar.selectbox("Smoker",[0,1], format_func = lambda x: "No" if x=
 input_data = preprocess_input(age, sex, bmi, children, smoker)
 prediction = predict_insurance_charge(input_data)
 
-st.subheader("Estimated Insurance Charge:")
-result_placeholder = st.empty()
+st.header("Estimated Insurance Charge:")
+result_placeholder = st.subheader("")
 result_placeholder.write(prediction[0])
 
 #####################
