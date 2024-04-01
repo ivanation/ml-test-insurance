@@ -49,6 +49,7 @@ with st.expander('Initial dataset', expanded=False):
 # Display feature importance plot
 with st.expander('feature_importances', expanded=False):
   importance = pd.Series(rfr_model.feature_importances_, index = X_train.columns.values)
-  #importance.nlargest(5).plot(kind = 'barh')
+  chart_data = importance.nlargest(5).plot(kind = 'barh')
+  st.bar_chart(chart_data)
 
 
