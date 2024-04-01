@@ -39,7 +39,7 @@ prediction = predict_insurance_charge(input_data)
 
 st.header("Estimated Insurance Charge:")
 result_placeholder = st.empty()
-result_placeholder.write(**{prediction[0]}**)
+result_placeholder.write(prediction[0])
 
 #####################
 
