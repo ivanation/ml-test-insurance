@@ -46,4 +46,9 @@ result_placeholder.write(prediction[0])
 with st.expander('Initial dataset', expanded=False):
         st.dataframe(data, height=210, use_container_width=True)
 
+# Display feature importance plot
+with st.expander('feature_importances', expanded=False):
+  importance = pd.Series(rfr_model.feature_importances_, index = X_train.columns.values)
+  importance.nlargest(5).plot(kind = 'barh')
+
 
