@@ -43,4 +43,7 @@ result_placeholder.write(prediction[0])
 
 #####################
 
+with st.expander('Initial dataset', expanded=False):
+        st.dataframe(data, height=210, use_container_width=True)
+
 
