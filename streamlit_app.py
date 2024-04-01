@@ -9,14 +9,6 @@ labelencoder = preprocessing.LabelEncoder()
 scaler = preprocessing.StandardScaler()
 data = pd.read_csv("insurance.csv")
 data.drop_duplicates(inplace=True)
-data['sex'] = labelencoder.fit_transform(data['sex'])
-data['smoker'] = labelencoder.fit_transform(data['smoker'])
-X = data.drop(columns='charges')
-y = data['charges']
-X_train, X_test, y_train, y_test = model_selection.train_test_split(X, y, test_size=0.3)
-scaled_X_train = scaler.fit_transform(X_train)
-rfr_model = RandomForestRegressor(max_features=3, n_estimators=128)
-rfr_model.fit(scaled_X_train, y_train)
 
 """
 # Welcome to Streamlit!
