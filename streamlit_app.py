@@ -12,6 +12,10 @@ data.drop_duplicates(inplace=True)
 data = data[["age","sex","bmi","children","smoker","charges"]]
 data['sex'] = labelencoder.fit_transform(data['sex'])
 data['smoker'] = labelencoder.fit_transform(data['smoker'])
+X = data.drop(columns='charges')
+y = data['charges']
+X_train, X_test, y_train, y_test = model_selection.train_test_split(X, y, test_size=0.3)
+scaled_X_train = scaler.fit_transform(X_train)
 
 """
 # Welcome to Streamlit!
