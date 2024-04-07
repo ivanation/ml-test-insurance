@@ -1,4 +1,4 @@
-# Predicción de Cargos en Compañia de Seguro
+# Predicción de Cargos en Compañía de Seguro
 
 Script de Python usando machine learning "Random Forest Regressor" Para predecir el cargo a cobrar en una asegradora.
 
